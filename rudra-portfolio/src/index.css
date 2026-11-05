@@ -1,0 +1,186 @@
+/* =========================================================
+   Unique professional theme layer (delete this block to undo)
+   ========================================================= */
+:root {
+  --bg: #070B14;
+  --bg-2: #0E1626;
+  --deep: #164E63;
+  --accent: #2DD4BF;
+  --accent-2: #E9D5FF;
+  --text: #F5F7FA;
+  --text-2: #A8B3C4;
+  --line: rgba(255, 255, 255, 0.09);
+  --glass: rgba(255, 255, 255, 0.045);
+  --ease: cubic-bezier(.2, .7, .2, 1);
+}
+
+html { scroll-behavior: smooth; }
+
+body {
+  background:
+    radial-gradient(900px 500px at 10% -10%, rgba(22, 78, 99, .55), transparent 60%),
+    radial-gradient(800px 500px at 100% 0%, rgba(233, 213, 255, .10), transparent 60%),
+    var(--bg);
+  background-attachment: fixed;
+  color: var(--text);
+  font-family: "Inter", system-ui, sans-serif;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Subtle grain overlay for a premium, non-flat feel */
+body::before {
+  content: "";
+  position: fixed; inset: 0; z-index: -1; pointer-events: none; opacity: .05;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
+}
+
+h1, h2, h3, h4 {
+  font-family: "Space Grotesk", "Inter", sans-serif;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+}
+h1 { font-weight: 700; }
+h2 { font-weight: 600; }
+
+p { color: var(--text-2); }
+
+a { color: var(--accent); text-decoration: none; transition: color .25s; }
+a:hover { color: var(--accent-2); }
+
+::selection { background: var(--accent); color: #04121a; }
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 10px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: linear-gradient(var(--deep), var(--accent)); border-radius: 10px; }
+
+/* Buttons */
+button, .btn, a[class*="btn"], a[class*="button"] {
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  border-radius: 12px;
+  transition: transform .3s var(--ease), box-shadow .3s, background .3s, border-color .3s;
+}
+button:hover, .btn:hover, a[class*="btn"]:hover, a[class*="button"]:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 28px rgba(45, 212, 191, .25);
+}
+
+/* Cards: glass surface with a gradient-border hover */
+article, [class*="card"] {
+  background: var(--glass);
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: transform .35s var(--ease), border-color .35s, box-shadow .35s;
+}
+article:hover, [class*="card"]:hover {
+  transform: translateY(-6px);
+  border-color: rgba(45, 212, 191, .55);
+  box-shadow: 0 18px 40px rgba(22, 78, 99, .45), 0 0 0 1px rgba(233, 213, 255, .12);
+}
+
+/* Section headings get a short gradient underline */
+section h2::after {
+  content: "";
+  display: block; width: 56px; height: 4px; margin-top: 12px; border-radius: 4px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+}
+
+/* Images: soft rounded corners */
+img { border-radius: 14px; }
+
+/* Form fields */
+input, textarea {
+  background: rgba(7, 11, 20, .7);
+  color: var(--text);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  font-family: inherit;
+  transition: border-color .25s, box-shadow .25s;
+}
+input:focus, textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(45, 212, 191, .2);
+}
+
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+/* Respect reduced-motion preference */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation: none !important; transition-duration: .01ms !important; }
+  html { scroll-behavior: auto; }
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  background: #080d18;
+  color: #ffffff;
+  line-height: 1.65;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  border: none;
+  background: none;
+  color: inherit;
+}
+
+input,
+textarea {
+  font-family: inherit;
+}
+
+::selection {
+  background: #38bdf8;
+  color: #080d18;
+}
+
+::-webkit-scrollbar {
+  width: 9px;
+}
+::-webkit-scrollbar-track {
+  background: #080d18;
+}
+::-webkit-scrollbar-thumb {
+  background: #1f2a44;
+  border-radius: 8px;
+}
+
+:focus-visible {
+  outline: 2px solid #38bdf8;
+  outline-offset: 3px;
+}
